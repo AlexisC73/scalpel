@@ -1,3 +1,99 @@
+* {
+  box-sizing: border-box;
+}
 
+body, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #333;
+}
+
+nav {
+  width: 100%;
+  height: 80px;
+}
+nav .menuButton {
+  cursor: pointer;
+  background-color: white;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav .menuButton:hover::before {
+  transform: scale(1.2);
+}
+nav .menuButton::before {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: white;
+  z-index: -2;
+  transition: all ease 500ms;
+}
+nav .menuButton span::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 20px;
+  border: 3px solid black;
+}
+
+.menu-open nav .menuButton::before {
+  transform: scale(60);
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 100vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+}
+.menu .listImage {
+  position: relative;
+}
+.menu .listImage .item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+.menu .listImage .item.active {
+  opacity: 1;
+}
+.menu .listMenu {
+  padding: 0 50px;
+}
+.menu .listMenu p {
+  margin-bottom: 100px;
+}
+.menu .listMenu ul li {
+  font-size: 40px;
+  list-style: none;
+  margin-bottom: 40px;
+  padding: 0 15px;
+  cursor: pointer;
+}
 
 /*# sourceMappingURL=main.css.map */
