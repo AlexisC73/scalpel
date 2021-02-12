@@ -15,88 +15,93 @@ body {
 }
 
 nav {
-  width: 100%;
-  height: 80px;
-}
-nav .menuButton {
-  cursor: pointer;
-  background-color: white;
-  width: 70px;
-  height: 70px;
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-nav .menuButton:hover::before {
-  transform: scale(1.2);
-}
-nav .menuButton::before {
-  content: "";
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background-color: white;
-  z-index: -2;
-  transition: all ease 500ms;
-}
-nav .menuButton span::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 20px;
-  border: 3px solid black;
-}
-
-.menu-open nav .menuButton::before {
-  transform: scale(60);
-}
-
-.menu {
-  display: none;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 100vh;
   position: absolute;
   top: 0;
-  bottom: 0;
   right: 0;
   left: 0;
+  right: 0;
+}
+nav::before {
+  background-color: #fff;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  width: 70px;
+  height: 70px;
+  content: "";
+  border-radius: 50%;
+  transition: all 0.4s ease;
   z-index: -1;
 }
-.menu .listImage {
+nav .menuButton {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 43px;
+  right: 47px;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+  z-index: 40;
+}
+nav .menuButton::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+nav .menuItem {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: none;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 100vh;
+}
+nav .menuItem .listImage {
   position: relative;
 }
-.menu .listImage .item {
+nav .menuItem .listImage .item {
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
   right: 0;
-  background-repeat: no-repeat;
+  left: 0;
+  bottom: 0;
+  top: 0;
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: all ease 0.5s;
 }
-.menu .listImage .item.active {
+nav .menuItem .listImage .item.active {
   opacity: 1;
 }
-.menu .listMenu {
-  padding: 0 50px;
+nav .menuItem .listMenu {
+  padding-left: 50px;
 }
-.menu .listMenu p {
+nav .menuItem .listMenu p {
+  margin-top: 30px;
   margin-bottom: 100px;
 }
-.menu .listMenu ul li {
-  font-size: 40px;
+nav .menuItem .listMenu ul {
+  padding-left: 30px;
+}
+nav .menuItem .listMenu ul li {
   list-style: none;
+  font-size: 40px;
   margin-bottom: 40px;
-  padding: 0 15px;
+}
+nav .menuItem .listMenu ul li:hover {
   cursor: pointer;
+}
+
+.menu-open nav::before {
+  transform: scale(50);
 }
 
 /*# sourceMappingURL=main.css.map */

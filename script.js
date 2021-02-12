@@ -1,26 +1,25 @@
-const menuButton = document.querySelector('.menuButton')
-const menu = document.querySelector('.menu')
+const nav = document.querySelector('nav')
+const menu = document.querySelector('.menuButton')
+const menuItem = document.querySelector('.menuItem')
 
-menuButton.addEventListener('click', (e) => {
+menu.addEventListener('click', () => {
     document.body.classList.toggle('menu-open')
-    const menuIsOpen = document.body.classList.contains('menu-open')
-
+    const menuOpen = document.body.classList.contains('menu-open')
     setTimeout(() => {
-        menu.style.display = menuIsOpen ? 'grid' : 'none'
-    }, menuIsOpen ? 400 : 0)
+        menuItem.style.display = menuOpen ? 'grid' : 'none'
+    }, menuOpen ? 400 : 0)
 })
-const listImage = [...document.querySelectorAll('.listImage > div')]
-const listProjects = [...document.querySelector('.listMenu > ul').childNodes]
 
-let active = document.querySelector('.listImage > .item.active')
+let activeImage = document.querySelector('.listImage > .item.active')
 
-listProjects.forEach(project => {
+
+const listImage = document.querySelectorAll('.listImage > .item')
+const listProjects = document.querySelectorAll('.listMenu > ul > li')
+
+listProjects.forEach((project, index) => {
     project.addEventListener('mouseenter', (e) => {
-        const index = parseInt(e.target.getAttribute('projectn'), 10) - 1
-        active.classList.remove('active')
+        activeImage.classList.remove('active')
         listImage[index].classList.add('active')
-        active = listImage[index]
+        activeImage = listImage[index]
     })
-});
-
-
+})
