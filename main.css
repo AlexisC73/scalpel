@@ -95,6 +95,7 @@ nav .menuItem .listMenu ul li {
   list-style: none;
   font-size: 40px;
   margin-bottom: 40px;
+  width: fit-content;
 }
 nav .menuItem .listMenu ul li:hover {
   cursor: pointer;
