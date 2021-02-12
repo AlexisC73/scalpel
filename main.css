@@ -9,13 +9,12 @@ body, ul, li {
 
 body {
   background-color: #333;
-  height: 100vh;
   width: 100vh;
-  overflow: hidden;
+  height: 300vh;
 }
 
 nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
