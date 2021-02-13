@@ -70,6 +70,7 @@ nav {
 
         .listImage {
             position: relative;
+            animation: fadeApparitionDown 1s forwards;
             .item {
                 position: absolute;
                 right: 0;
@@ -79,7 +80,7 @@ nav {
                 background-size: cover;
                 background-position: center;
                 opacity: 0;
-
+                transition: opacity 1s ease;
                 &.active {
                     opacity: 1;
                 }
@@ -100,8 +101,22 @@ nav {
                     font-size: 40px;
                     margin-bottom: 40px;
                     width: fit-content;
+                    transform: translateY(-600px);
+                    animation: fadeApparitionUp 1s forwards;
                     &:hover {
                         cursor: pointer;
+                    }
+                    &:nth-of-type(4) {
+                        animation-delay: .05s;
+                    }
+                    &:nth-of-type(3) {
+                        animation-delay: .10s;
+                    }
+                    &:nth-of-type(2) {
+                        animation-delay: .15s;
+                    }
+                    &:nth-of-type(1) {
+                        animation-delay: .20s;
                     }
                 }
             }
@@ -114,5 +129,27 @@ nav {
         &::before {
             transform: scale(50);
         }
+    }
+}
+
+@keyframes fadeApparitionUp{
+    0% {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeApparitionDown{
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
     }
 }
