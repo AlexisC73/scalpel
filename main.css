@@ -44,15 +44,22 @@ nav .menuButton {
   cursor: pointer;
   z-index: 40;
 }
-nav .menuButton::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+nav .menuButton span {
+  width: 40px;
+  height: 6px;
+  background-color: #333;
   position: absolute;
-  border: 2px solid black;
-  border-radius: 50%;
+  top: 9px;
+  right: -2px;
+  border-radius: 3px;
+  transition: all 1s ease;
+}
+nav .menuButton span:nth-of-type(2) {
+  top: 20px;
+}
+nav .menuButton span:nth-of-type(3) {
+  top: 31px;
+  width: 34px;
 }
 nav .menuItem {
   position: absolute;
@@ -118,6 +125,16 @@ nav .menuItem .listMenu ul li:nth-of-type(1) {
 
 .menu-open nav::before {
   transform: scale(50);
+}
+.menu-open nav .menuButton span:nth-of-type(1) {
+  transform: rotate(45deg) translate3d(3px, 12.5px, 0px);
+}
+.menu-open nav .menuButton span:nth-of-type(2) {
+  transform: translateX(-40px);
+  opacity: 0;
+}
+.menu-open nav .menuButton span:nth-of-type(3) {
+  transform: rotate(-45deg) translate3d(0px, -15.5px, 0px) scaleX(1.17);
 }
 
 @keyframes fadeApparitionUp {
