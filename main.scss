@@ -140,14 +140,14 @@ nav {
         .menuButton {
             span {
                 &:nth-of-type(1) {
-                    transform: rotate(45deg) translate3d(3px, 12.5px, 0px);
+                    transform: rotate(45deg) translate3d(6px, 6.5px, 0px);
                 }
                 &:nth-of-type(2) {
-                    transform: translateX(-40px);
+                    transform: translateX(-100px);
                     opacity: 0;
                 }
                 &:nth-of-type(3) {
-                    transform: rotate(-45deg) translate3d(0px, -15.5px, 0px) scaleX(1.17);
+                    transform: rotate(-45deg) translate3d(6px, -12.5px, 0px) scaleX(1.17);
                 }
             }
         }
