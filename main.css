@@ -43,6 +43,7 @@ nav .menuButton {
   border: none;
   cursor: pointer;
   z-index: 40;
+  outline: none;
 }
 nav .menuButton span {
   width: 40px;
